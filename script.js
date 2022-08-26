@@ -42,3 +42,10 @@ $("#enable-cards").on("click", function () {
     2000
   );
 });
+
+// address copt
+$('input').focus(function(){
+    $(this).select();
+    document.execCommand('copy');
+    M.toast({html: 'Copied'})
+})
