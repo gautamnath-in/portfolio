@@ -49,3 +49,19 @@ $('input').focus(function(){
     document.execCommand('copy');
     M.toast({html: 'Copied'})
 })
+
+//animations
+
+let awayItems = document.querySelectorAll('.away');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('onboard')
+    } else {
+      entry.target.classList.remove('onboard')
+    }
+  })
+})
+
+awayItems.forEach(ele => observer.observe(ele))
