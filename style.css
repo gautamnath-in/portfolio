@@ -63,10 +63,19 @@ img {
     height: 100vh;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .welcome-text p {
     padding: 10px 40px 6px;
+    padding: 10px 40px 6px;
+    max-width: 50%;
+    text-align: center;
+}
+
+.materialboxed {
+    cursor: cell;
 }
 
 .section-text {
@@ -315,6 +324,75 @@ div#technology .col {
 
 #technology img:nth-child(7) {
     transition-delay: 700ms;
+}
+
+input[readonly]:focus {
+    border-bottom: 1px solid #26a69a;
+    -webkit-box-shadow: 0 1px 0 0 #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a;
+}
+
+.panda {
+    position: absolute;
+    top: 70%;
+    right: -20px;
+    visibility: hidden;
+}
+
+.appear {
+    visibility: visible;
+    animation: appear 1s ease-in;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    25% {
+        opacity: 0.25;
+        transform: translateY(-80px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-60px);
+    }
+
+    75% {
+        opacity: 0.75;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes drop {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-18px);
+    }
+}
+
+.appear.drop {
+    animation: drop 3s ease-in-out;
+    display: block;
 }
 
 @media (prefers-reduced-motion) {

@@ -44,10 +44,10 @@ $("#enable-cards").on("click", function () {
 });
 
 // address copt
-$('input').focus(function(){
-    $(this).select();
-    document.execCommand('copy');
-    M.toast({html: 'Copied'})
+$('input').focus(function () {
+  $(this).select();
+  document.execCommand('copy');
+  M.toast({ html: 'Copied' })
 })
 
 //animations
@@ -65,3 +65,18 @@ const observer = new IntersectionObserver(entries => {
 })
 
 awayItems.forEach(ele => observer.observe(ele))
+
+setTimeout(() => {
+  $('.panda').addClass('appear')
+}, 2500);
+setTimeout(() => {
+  $('.panda').addClass('drop')
+}, 3000);
+
+//external prompt
+$('.external a').click((e) => {
+  window.open(e.target.closest('a').getAttribute('href'),
+    'newwindow',
+    'width=320,height=250');
+  return false;
+});
